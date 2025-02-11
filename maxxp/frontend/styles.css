@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #ffffff;
+    color: white;
+}
+
+/* Logo Styling */
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+/* Navbar Links */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(62, 95, 241);
+    font-size: 16px;
+}
+
+/* Button */
+.btn {
+    background-color: #5c67f2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.hero h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #9e9fa4;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #eef2f6;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.text-content h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.text-content p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.image-content {
+    flex: 1;
+    text-align: center;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .image-content img {
+        margin-top: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+}
