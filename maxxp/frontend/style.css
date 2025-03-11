@@ -8,17 +8,14 @@
 
 body {
     overflow-x: hidden;
-    /* Prevents horizontal scrolling */
     background-color: #f4f4f4;
 }
 
 /* Navbar */
 .navbar {
     position: absolute;
-    /* Allows image underneath */
     width: 100%;
     box-sizing: border-box;
-    /* Prevents extra spacing issues */
     top: 0;
     left: 0;
     display: flex;
@@ -26,17 +23,16 @@ body {
     justify-content: space-between;
     padding: 15px 50px;
     background: rgba(0, 0, 0, 0.2);
-    /* Light transparency */
     backdrop-filter: blur(5px);
-    /* Glass effect */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    /* Subtle contrast */
     z-index: 10;
-    /* Keeps it above content */
 }
 
 /* Profile Icon */
 .profile-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: flex;
     align-items: center;
 }
@@ -47,8 +43,8 @@ body {
 }
 
 .profile-icon img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid white;
@@ -69,7 +65,6 @@ body {
 .navbar ul li a {
     text-decoration: none;
     color: rgb(103, 117, 225);
-    /* Ensures visibility */
     font-weight: bold;
     font-size: 16px;
 }
@@ -79,7 +74,6 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.2);
-    /* Light transparency */
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -90,25 +84,77 @@ body {
     outline: none;
     padding: 5px;
     color: white;
-    /* Ensures readability */
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
+.hero ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.hero ul li {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hero Section Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    background: rgba(255, 165, 0, 0.8); /* Orange hover effect */
+}
+
+.arrow.left {
+    left: 30px;
+}
+
+.arrow.right {
+    right: 30px;
+}
+
+
+
+/* Slider Images */
 .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
+.hero-image.active {
+    opacity: 1;
+}
+
+/* Overlay */
 .overlay {
     position: absolute;
     top: 0;
@@ -123,6 +169,8 @@ body {
     position: absolute;
     bottom: 50px;
     right: 50px;
+    text-align: right;
+    z-index: 10; /* Ensures it's always on top */
 }
 
 /* Buttons */
@@ -209,22 +257,23 @@ footer {
 /* Authentication Pages */
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Increased width */
     margin: 100px auto;
 }
 
 /* Form Box */
 .form-box {
     background: white;
-    padding: 30px;
+    padding: 40px; /* Increased padding */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-size: 18px; /* Larger text */
 }
 
 /* Authentication Logo */
 .form-box .logo {
-    width: 150px;
+    width: 180px; /* Slightly larger logo */
     margin-bottom: 10px;
 }
 
@@ -239,17 +288,18 @@ form {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     margin: 5px 0;
     color: #333;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* More padding */
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #e9822e;
     border-radius: 5px;
+    font-size: 16px; /* Bigger input text */
 }
 
 /* Captcha Box */
@@ -267,34 +317,34 @@ input {
 .remember-me {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .remember-me input {
-    margin-right: 5px;
+    margin-right: 50px; 
+    transform: scale(1.9); 
 }
 
 /* Buttons */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #0056b3;
     color: white;
-    font-size: 16px;
+    font-size: 18px; /* Bigger button text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
 }
 
-button:hover {
-    background: #004494;
-}
+
 
 /* Links */
 p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 p a {
@@ -313,11 +363,234 @@ p a:hover {
 }
 
 .password-options a {
-    font-size: 14px;
+    font-size: 16px;
     color: #0056b3;
     text-decoration: none;
 }
 
 .password-options a:hover {
     text-decoration: underline;
+}
+.energy-action {
+    background: #ffffff;
+    padding: 50px;
+    text-align: center;
+}
+
+.energy-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2d6a2e;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+p {
+    color: #4a4a4a;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.icon-card {
+    background: #f0fff0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 120px;
+}
+
+.icon-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+/*rounded */
+.icon-cardd {
+    text-align: center;
+}
+
+.icon-cardd img {
+    width: 80px;  /* Adjust as needed */
+    height: 80px; /* Ensures it remains a perfect circle */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fills the circle properly */
+    border: 2px solid #f2aa2f; /* Optional: adds a border around icons */
+    padding: 5px; /* Optional: spacing inside the border */
+}
+.icon-card p {
+    color: #2d4f99;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn.get-started {
+    background: #2d6a2e;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn.get-started:hover {
+    background: #1b4d1c;
+}
+
+.slide {
+    position: relative;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    right: 170px; /* Adjust as needed */
+    transform: translateY(-50%);
+    color: white;
+    padding: 10px 20px;
+    text-align: right;
+}
+.strong-text {
+    font-size: 24px; /* Bigger text */
+    font-weight: bold; /* Stronger emphasis */
+}
+
+.small-text {
+    font-size: 16px; /* Smaller text */
+    font-weight: normal;
+}
+.energy-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    padding: 80px 0; /* Increased padding for a bigger layout */
+}
+
+.energy-container {
+    display: flex;
+    gap: 40px; /* Increased spacing */
+    text-align: center;
+    max-width: 1200px; /* Expanded container */
+}
+
+.energy-card {
+    background: #c0dbf2;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+    width: 300px; /* Larger card width */
+    height: 300px; /* Larger card height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.energy-card .icon {
+    width: 100%;
+    height: 85%;  /* Image takes most of the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.energy-card .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full coverage */
+    border-radius: 20px; /* Optional soft edges */
+}
+
+.energy-card h3 {
+    font-size: 18px; /* Bigger text */
+    margin: 10px 0;
+}
+
+.energy-center {
+    background: #aecae3;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+    width: 320px; /* Larger center box */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.energy-center h2 {
+    font-size: 28px; /* Larger heading */
+    color: #fff;
+}
+
+.energy-center p {
+    font-size: 16px; /* Larger text */
+    color: #fff;
+}
+
+.get-started {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #4f4caf;
+    color: rgb(255, 252, 252);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.energy-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(252, 253, 255);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 15px;
+    color: white;
+}
+
+.energy-content {
+    max-width: 50%;
+}
+
+.energy-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2b56e1;
+    margin-bottom: 15px;
+}
+
+.energy-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.energy-image img {
+    max-width: 400px;
+    height: auto;
 }
